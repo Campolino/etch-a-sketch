@@ -1,22 +1,22 @@
-const container = document.querySelector('.canvas');
-const resetCanvas = document.querySelector('.reset-canvas');
+const canvas = document.querySelector('.canvas');
 
-function makeRows(rows, cols) {
-  container.style.setProperty('--grid-rows', rows);
-  container.style.setProperty('--grid-cols', cols);
-  for (c = 0; c < (rows * cols); c++) {
-    let cell = document.createElement("div");
-    container.appendChild(cell).className = "item";
-  };
-};
-
-resetCanvas.addEventListener('click', function() {
-  size = parseInt(window.prompt("Wich size it should be?"));
-  while (!Number.isInteger(size) ){
-    size = parseInt(window.prompt("Wich size it should be?"));
+function createGrid(size) {
+  for(let i = 0; i < (size * size); i++) {
+    let grid = document.createElement('div');
+    grid.classList.add('square');
+    canvas.appendChild(grid);
   }
-  container.innerHTML = '';
-  makeRows(size, size);
-});
+  gridLayout(size);
+}
 
-makeRows(16, 16);
+function gridLayout(size) {
+  console.log(canvas.childElementCount);
+  let squares = Array.from(document.querySelectorAll('.square'));
+  squares.forEach(square => {
+    square.style.backgroundColor = 'black';
+    square.style.width = `calc(600px / ${size})`;
+    square.style.height = `calc(600px / ${size})`;
+  });
+}
+
+createGrid(16);
