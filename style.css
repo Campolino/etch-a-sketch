@@ -1,0 +1,42 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reset-canvas {
+  padding: 10px 20px;
+  background-color: rgb(219, 212, 198);
+  width: 80px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.reset-canvas:hover {
+  background-color: rgb(194, 188, 176);
+  cursor: pointer;
+}
+
+.center-canvas {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.canvas {
+  border: 1px solid black;
+  display: grid;
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+}
+
+.item {
+  padding: 1em;
+  text-align: center;
+}
+
+.item:hover {
+  background-color: red;
+}
