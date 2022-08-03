@@ -12,6 +12,9 @@ function makeRows(rows, cols) {
 
 resetCanvas.addEventListener('click', function() {
   size = parseInt(window.prompt("Wich size it should be?"));
+  while (!Number.isInteger(size) ){
+    size = parseInt(window.prompt("Wich size it should be?"));
+  }
   container.innerHTML = '';
   makeRows(size, size);
 });
