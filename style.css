@@ -1,6 +1,20 @@
+.container {
+  display: flex;
+  height: 100vh;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
 .canvas {
+  border: 1px solid black;
   display: flex;
   flex-wrap: wrap;
   width: 600px;
   height: 600px;
+}
+
+button {
+  padding: 10px 25px;
+  font-size: 24px;
 }
