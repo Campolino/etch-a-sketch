@@ -39,5 +39,18 @@ function paint() {
   this.style.backgroundColor = "#" + colorGenerator;
 }
 
+// Wipe canvas
+function wipeCanvas() {
+  let squares = Array.from(document.querySelectorAll('.square'));
+  // Remove all grids from the canvas
+  squares.forEach(square => square.remove());
+
+  // Call the function to recreate grids
+  createGrid(16);
+}
+
 // This call the function that create the grids
 createGrid(16);
+
+// Listenning for when the user click to reset canvas
+reset.addEventListener('click', wipeCanvas);
