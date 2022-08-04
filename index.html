@@ -8,8 +8,18 @@
   <title>Etch-a-Sketch</title>
 </head>
 <body>
+  <header>
+    <h1>Etch-a-Sketch</h1>
+    <p>Let your imagination run!</p>
+  </header>
+
   <div class="container">
     <div class="controlers">
+      <div class="slidecontainer">
+        <div class="sliderText"></div>
+        <input type="range" min="1" max="100" value="16" class="slider" id="myRange">
+      </div>
+      <button id="change-size">Resize</button>
       <button id="reset-canvas">Reset Canvas</button>
     </div>
     <div class="canvas"></div>
